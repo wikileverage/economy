@@ -1,3 +1,24 @@
+class Economy:
+    def __init__(self):
+        self.markets = []
+
+
+class Market:
+    def __init__(self, product_name):
+        self.product_name = product_name
+        self.transactions = []
+
+
+class EconomicActor:
+    def __init__(self, assets, liabilities):
+        self.assets = assets
+        self.liabilities = liabilities
+
+    @property
+    def equity(self):
+        return self.assets - self.liabilities
+
+
 class CashTransaction:
     def __init__(self, buyer, seller, product, amount, currency):
         self.buyer = buyer  # the economic actor providing payment
@@ -16,24 +37,3 @@ class CreditTransaction:
         # must be repaid
         self.interest_rate = interest_rate  # the amount of interest to be paid for the loan provided for the purchase
         # of the product
-
-
-class EconomicActor:
-    def __init__(self, assets, liabilities):
-        self.assets = assets
-        self.liabilities = liabilities
-
-    @property
-    def equity(self):
-        return self.assets - self.liabilities
-
-
-class Market:
-    def __init__(self, product_name):
-        self.product_name = product_name
-        self.transactions = []
-
-
-class Economy:
-    def __init__(self):
-        self.markets = []
