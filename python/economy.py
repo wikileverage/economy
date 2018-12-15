@@ -20,6 +20,15 @@ class EconomicActor:
 
 
 class CashTransaction:
+    """Summary of class here.
+
+    Longer class information....
+    Longer class information....
+
+    Attributes:
+        likes_spam: A boolean indicating if we like SPAM or not.
+        eggs: An integer count of the eggs we have laid.
+    """    
     def __init__(self, buyer, seller, product, amount, currency):
         self.buyer = buyer  # the economic actor providing payment
         self.seller = seller  # the economic actor providing the product (good/service/financial asset)
